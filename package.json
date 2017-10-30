@@ -1,0 +1,35 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prod": "node ./start.js",
+    "watch": "nodemon ./start.js --ignore public/ & browser-sync start --proxy 'localhost:3000' --files 'public/dist, views/, routes/'",
+    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
+    "assets": "webpack -w --display-max-modules 0"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "6.7.7",
+    "babel-core": "6.24.0",
+    "babel-loader": "6.4.0",
+    "babel-preset-es2015": "6.24.0",
+    "browser-sync": "^2.18.12",
+    "concurrently": "3.4.0",
+    "css-loader": "0.27.3",
+    "extract-text-webpack-plugin": "2.1.0",
+    "node-sass": "4.5.0",
+    "nodemon": "1.11.0",
+    "postcss-loader": "1.3.3",
+    "sass-loader": "6.0.3",
+    "webpack": "2.2.1"
+  }
+}
